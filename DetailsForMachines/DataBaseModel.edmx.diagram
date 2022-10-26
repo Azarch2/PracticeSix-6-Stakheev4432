@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="020f80af25d3407794f645b3a5f966ec" Name="Diagram1">
+        <EntityTypeShape EntityType="MachinesAndDetailsModel.DeliveryNote" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachinesAndDetailsModel.Detail" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachinesAndDetailsModel.Machine" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachinesAndDetailsModel.Storage" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachinesAndDetailsModel.TypeOfMachine" Width="1.5" PointX="3.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachinesAndDetailsModel.Worker" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="MachinesAndDetailsModel.FK_DeliveryNote_Detail" ManuallyRouted="false" />
+        <AssociationConnector Association="MachinesAndDetailsModel.FK_DeliveryNote_Storage" ManuallyRouted="false" />
+        <AssociationConnector Association="MachinesAndDetailsModel.FK_DeliveryNote_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="MachinesAndDetailsModel.FK_Detail_Machine1" ManuallyRouted="false" />
+        <AssociationConnector Association="MachinesAndDetailsModel.FK_Detail_Storage1" ManuallyRouted="false" />
+        <AssociationConnector Association="MachinesAndDetailsModel.FK_Machine_TypeOfMachine" ManuallyRouted="false" />
+        <AssociationConnector Association="MachinesAndDetailsModel.FK_Machine_Worker" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

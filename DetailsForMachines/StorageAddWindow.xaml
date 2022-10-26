@@ -1,0 +1,34 @@
+﻿<Window x:Class="DetailsForMachines.StorageAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DetailsForMachines"
+        mc:Ignorable="d"
+        Title="StorageAddWindow" Closing="close" Height="450" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="DimGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource TextBig}" HorizontalAlignment="Center" Text="Добавление хранилища"></TextBlock>
+        <TextBlock Style="{StaticResource TextStandart}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Text="Номер"></TextBlock>
+        <TextBox Name="Number" Margin="10" Background="Aquamarine" Style="{StaticResource TextBox}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="1"></TextBox>
+       
+        
+        <TextBlock  Style="{StaticResource TextStandart}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Text="Адрес"></TextBlock>
+        <TextBox Name="Address" Margin="10" Background="Aquamarine" Style="{StaticResource TextBox}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="2"></TextBox>
+        <TextBlock VerticalAlignment="Top" Style="{StaticResource TextStandart}" HorizontalAlignment="Center" Grid.Row="3" Text="Площадь"></TextBlock>
+        <TextBox Name="Area" Margin="10" Background="Aquamarine" Style="{StaticResource TextBox}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="3"></TextBox>
+        <Button Click="AddStorage" Style="{StaticResource button}" Content="Добавить" Grid.Row="4" Width="200" Height="60">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="35"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

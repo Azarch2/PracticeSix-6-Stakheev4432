@@ -1,0 +1,49 @@
+﻿<Application x:Class="DetailsForMachines.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DetailsForMachines"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="Window" TargetType="Window">
+            <Setter Property="Background" Value="#008A02"></Setter>
+            <Setter Property="Icon" Value="Resources\Logo.jpg"></Setter>
+        </Style>
+        <Style x:Key="TextBig" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="26"></Setter>
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Height" Value="45"></Setter>
+            
+        </Style>
+        <Style x:Key="TextStandart" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="Height" Value="45"></Setter>
+        </Style>
+        <Style x:Key="TextBox" TargetType="TextBox">
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+        </Style>
+        <Style x:Key="button" TargetType="Button">
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="FontWeight" Value="Black"></Setter>
+        </Style>
+        <Style x:Key="Border" TargetType="Border">
+            <Setter Property="Background" Value="#0D9F9F"></Setter>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Style.Setters>
+                <Setter Property="TextBlock.TextAlignment" Value="Center" />
+            </Style.Setters>
+        </Style>
+        <Style x:Key="combo" TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Foreground" Value="#0D9F9F"></Setter>
+            <Setter Property="Background" Value="Aquamarine"></Setter>
+        </Style>
+    </Application.Resources>
+    
+    
+</Application>

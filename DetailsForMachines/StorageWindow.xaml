@@ -1,0 +1,50 @@
+﻿<Window x:Class="DetailsForMachines.StorageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DetailsForMachines"
+        mc:Ignorable="d"
+        Title="StorageWindow" Closing="close" Height="450" Width="800" WindowStartupLocation="CenterScreen" Style="{StaticResource Window}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Name="BorderUp" Style="{StaticResource Border}"></Border>
+        <Border Name="BorderDown" Grid.Row="2" Style="{StaticResource Border}"></Border>
+        <Button Name="BackButton" Style="{StaticResource button}" Click="BackToMainWindow" Content="Назад" Grid.Row="2" HorizontalAlignment="Left" Width="200" Margin="20,0,0,0" Height="50">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="35"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Height="35" Style="{StaticResource TextBig}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23" Text="Здесь вы можете просматривать и добавлять склады"></TextBlock>
+        <Button Name="AddButton" Style="{StaticResource button}" Click="AddDeliveryNote" Content="Добавить" Grid.Row="2" HorizontalAlignment="Center" Width="200" Margin="20,0,0,0" Height="50">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="35"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ListView HorizontalContentAlignment="Center" Foreground="Black" FontFamily="Comic Sans MS" FontSize="22" Name="StorageList" Grid.Row="1" Background="DimGray" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                        <GridViewColumn Header="Номер" DisplayMemberBinding="{Binding Number}"></GridViewColumn>
+                        <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding Address}"></GridViewColumn>
+                        <GridViewColumn Header="Площадь" DisplayMemberBinding="{Binding Area, StringFormat={}{0} (м^2)}"></GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
