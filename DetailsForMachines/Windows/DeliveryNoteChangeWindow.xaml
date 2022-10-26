@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DetailsForMachines"
         mc:Ignorable="d"
-        Title="DeliveryNoteChangeWindow" Closing="close" Background="DimGray" Height="650" Width="800" Style="{StaticResource Window}">
+        Title="Изменение накладной" Closing="close" Background="DimGray" Height="650" Width="800" Style="{StaticResource Window}">
     <Grid MinWidth="170">
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="80"></RowDefinition>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DetailsForMachines"
         mc:Ignorable="d"
-        Title="StorageAddWindow" Closing="close" Height="450" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="DimGray">
+        Title="Окно добавления хранилища" Closing="close" Height="450" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="DimGray">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
