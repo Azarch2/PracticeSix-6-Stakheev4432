@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MachinesAndDetailsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DeliveryNote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="StorageId" Type="Int32" Nullable="false" />
+    <Property Name="ReceiveDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DetailPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Detail" Relationship="Self.FK_DeliveryNote_Detail" FromRole="DeliveryNote" ToRole="Detail" />
+    <NavigationProperty Name="Storage" Relationship="Self.FK_DeliveryNote_Storage" FromRole="DeliveryNote" ToRole="Storage" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_DeliveryNote_Worker" FromRole="DeliveryNote" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Detail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MachineId" Type="Int32" />
+    <Property Name="StorageId" Type="Int32" />
+    <NavigationProperty Name="DeliveryNote" Relationship="Self.FK_DeliveryNote_Detail" FromRole="Detail" ToRole="DeliveryNote" />
+    <NavigationProperty Name="Machine" Relationship="Self.FK_Detail_Machine1" FromRole="Detail" ToRole="Machine" />
+    <NavigationProperty Name="Storage" Relationship="Self.FK_Detail_Storage1" FromRole="Detail" ToRole="Storage" />
+  </EntityType>
+  <EntityType Name="Machine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="StartWorkDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ServiceLife" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WriteOffDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Detail" Relationship="Self.FK_Detail_Machine1" FromRole="Machine" ToRole="Detail" />
+    <NavigationProperty Name="TypeOfMachine" Relationship="Self.FK_Machine_TypeOfMachine" FromRole="Machine" ToRole="TypeOfMachine" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK_Machine_Worker" FromRole="Machine" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Storage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Area" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DeliveryNote" Relationship="Self.FK_DeliveryNote_Storage" FromRole="Storage" ToRole="DeliveryNote" />
+    <NavigationProperty Name="Detail" Relationship="Self.FK_Detail_Storage1" FromRole="Storage" ToRole="Detail" />
+  </EntityType>
+  <EntityType Name="TypeOfMachine">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Machine" Relationship="Self.FK_Machine_TypeOfMachine" FromRole="TypeOfMachine" ToRole="Machine" />
+  </EntityType>
+  <EntityType Name="Worker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DeliveryNote" Relationship="Self.FK_DeliveryNote_Worker" FromRole="Worker" ToRole="DeliveryNote" />
+    <NavigationProperty Name="Machine" Relationship="Self.FK_Machine_Worker" FromRole="Worker" ToRole="Machine" />
+  </EntityType>
+  <Association Name="FK_DeliveryNote_Detail">
+    <End Role="Detail" Type="Self.Detail" Multiplicity="1" />
+    <End Role="DeliveryNote" Type="Self.DeliveryNote" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Detail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeliveryNote">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeliveryNote_Storage">
+    <End Role="Storage" Type="Self.Storage" Multiplicity="1" />
+    <End Role="DeliveryNote" Type="Self.DeliveryNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeliveryNote">
+        <PropertyRef Name="StorageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeliveryNote_Worker">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+    <End Role="DeliveryNote" Type="Self.DeliveryNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeliveryNote">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detail_Machine1">
+    <End Role="Machine" Type="Self.Machine" Multiplicity="0..1" />
+    <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Machine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Detail">
+        <PropertyRef Name="MachineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detail_Storage1">
+    <End Role="Storage" Type="Self.Storage" Multiplicity="0..1" />
+    <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Detail">
+        <PropertyRef Name="StorageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Machine_TypeOfMachine">
+    <End Role="TypeOfMachine" Type="Self.TypeOfMachine" Multiplicity="1" />
+    <End Role="Machine" Type="Self.Machine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeOfMachine">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Machine">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Machine_Worker">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+    <End Role="Machine" Type="Self.Machine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Machine">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MachinesAndDetailsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DeliveryNote" EntityType="Self.DeliveryNote" />
+    <EntitySet Name="Detail" EntityType="Self.Detail" />
+    <EntitySet Name="Machine" EntityType="Self.Machine" />
+    <EntitySet Name="Storage" EntityType="Self.Storage" />
+    <EntitySet Name="TypeOfMachine" EntityType="Self.TypeOfMachine" />
+    <EntitySet Name="Worker" EntityType="Self.Worker" />
+    <AssociationSet Name="FK_DeliveryNote_Detail" Association="Self.FK_DeliveryNote_Detail">
+      <End Role="Detail" EntitySet="Detail" />
+      <End Role="DeliveryNote" EntitySet="DeliveryNote" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeliveryNote_Storage" Association="Self.FK_DeliveryNote_Storage">
+      <End Role="Storage" EntitySet="Storage" />
+      <End Role="DeliveryNote" EntitySet="DeliveryNote" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeliveryNote_Worker" Association="Self.FK_DeliveryNote_Worker">
+      <End Role="Worker" EntitySet="Worker" />
+      <End Role="DeliveryNote" EntitySet="DeliveryNote" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detail_Machine1" Association="Self.FK_Detail_Machine1">
+      <End Role="Machine" EntitySet="Machine" />
+      <End Role="Detail" EntitySet="Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detail_Storage1" Association="Self.FK_Detail_Storage1">
+      <End Role="Storage" EntitySet="Storage" />
+      <End Role="Detail" EntitySet="Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Machine_TypeOfMachine" Association="Self.FK_Machine_TypeOfMachine">
+      <End Role="TypeOfMachine" EntitySet="TypeOfMachine" />
+      <End Role="Machine" EntitySet="Machine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Machine_Worker" Association="Self.FK_Machine_Worker">
+      <End Role="Worker" EntitySet="Worker" />
+      <End Role="Machine" EntitySet="Machine" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

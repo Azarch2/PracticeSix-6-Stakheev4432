@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="AcceptWindow" ResizeMode="NoResize" Style="{StaticResource Window}" Closing="Close" Height="200" Width="200" WindowStartupLocation="CenterScreen" Background="#0D9F9F">
     <Grid>
-        
         <Button Click="YesClick" Name="YesButton" VerticalAlignment="Top" Margin="20" Height="50" Content="Да" Style="{StaticResource button}">
             <Button.Resources>
                 <Style TargetType="Border">

@@ -22,7 +22,6 @@ namespace DetailsForMachines
     
         public virtual Detail Detail { get; set; }
         public virtual Storage Storage { get; set; }
-        
         public virtual Worker Worker { get; set; }
     }
 }

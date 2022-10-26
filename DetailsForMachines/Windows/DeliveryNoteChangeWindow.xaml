@@ -6,25 +6,21 @@
         xmlns:local="clr-namespace:DetailsForMachines"
         mc:Ignorable="d"
         Title="DeliveryNoteChangeWindow" Closing="close" Background="DimGray" Height="650" Width="800" Style="{StaticResource Window}">
-    <Grid>
+    <Grid MinWidth="170">
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition MinHeight="80" Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource TextBig}" HorizontalAlignment="Center" Text="Изменение накладной"></TextBlock>
         <TextBlock Style="{StaticResource TextStandart}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Text="Деталь"></TextBlock>
-        <ComboBox DisplayMemberPath="Name" Name="DetailsBox" Margin="10"  Style="{StaticResource combo}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="1">
-   
-        </ComboBox>
+        <ComboBox DisplayMemberPath="Name" Name="DetailsBox" Margin="10"  Style="{StaticResource combo}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="1"></ComboBox>
         <TextBlock  Style="{StaticResource TextStandart}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Text="Хранилище"></TextBlock>
-        <ComboBox DisplayMemberPath="Address" Name="StoragesBox" Margin="10"  Style="{StaticResource combo}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="2">
-        
-        </ComboBox>
+        <ComboBox DisplayMemberPath="Address" Name="StoragesBox" Margin="10"  Style="{StaticResource combo}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="2"></ComboBox>
         <TextBlock VerticalAlignment="Top" Style="{StaticResource TextStandart}" HorizontalAlignment="Center" Grid.Row="3" Text="Дата получения"></TextBlock>
         <TextBox Name="ReceiveDate" Margin="10" Background="Aquamarine" Style="{StaticResource TextBox}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="3"></TextBox>
         <TextBlock VerticalAlignment="Top" Style="{StaticResource TextStandart}" HorizontalAlignment="Center" Grid.Row="4" Text="Цена детали"></TextBlock>

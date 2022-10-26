@@ -21,9 +21,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-  
         <TextBlock Height="35" Style="{StaticResource TextBig}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23" Text="Здесь вы можете добавлять, удалять и просматривать накладные"></TextBlock>
-
         <ListView HorizontalContentAlignment="Center" Foreground="Black" FontFamily="Comic Sans MS" FontSize="22" Name="DeliveryNoteList" Grid.Row="1" Background="DimGray" ScrollViewer.HorizontalScrollBarVisibility="Visible">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
@@ -33,9 +31,7 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                     
                     <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id}">
-                        
                     </GridViewColumn>
                         <GridViewColumn Header="Склад">
                             <GridViewColumn.DisplayMemberBinding>
