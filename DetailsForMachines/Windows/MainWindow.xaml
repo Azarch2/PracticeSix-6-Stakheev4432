@@ -30,7 +30,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Name="ToMachineButton" Style="{StaticResource button}" Click="GoStorageWindow" Content="Работа со станками" Foreground="Black" Background="Aqua" VerticalAlignment="Top" Margin="0,155,0,0" Grid.Row="1" Width="300" Height="50">
+        <Button Name="ToMachineButton" Style="{StaticResource button}" Click="GoStorageWindow" Content="Работа со складами" Foreground="Black" Background="Aqua" VerticalAlignment="Top" Margin="0,155,0,0" Grid.Row="1" Width="300" Height="50">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="35"></Setter>

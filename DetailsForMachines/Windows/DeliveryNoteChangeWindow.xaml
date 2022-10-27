@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DetailsForMachines"
         mc:Ignorable="d"
-        Title="Изменение накладной" Closing="close" Background="DimGray" Height="650" Width="800" Style="{StaticResource Window}">
+        Title="Изменение накладной" WindowStartupLocation="CenterScreen" Closing="close" Background="DimGray" Height="650" Width="800" Style="{StaticResource Window}">
     <Grid MinWidth="170">
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="80"></RowDefinition>
@@ -19,7 +19,7 @@
         <TextBlock Style="{StaticResource TextBig}" HorizontalAlignment="Center" Text="Изменение накладной"></TextBlock>
         <TextBlock Style="{StaticResource TextStandart}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Text="Деталь"></TextBlock>
         <ComboBox DisplayMemberPath="Name" Name="DetailsBox" Margin="10"  Style="{StaticResource combo}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="1"></ComboBox>
-        <TextBlock  Style="{StaticResource TextStandart}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Text="Хранилище"></TextBlock>
+        <TextBlock  Style="{StaticResource TextStandart}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Text="Склад"></TextBlock>
         <ComboBox DisplayMemberPath="Address" Name="StoragesBox" Margin="10"  Style="{StaticResource combo}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="2"></ComboBox>
         <TextBlock VerticalAlignment="Top" Style="{StaticResource TextStandart}" HorizontalAlignment="Center" Grid.Row="3" Text="Дата получения"></TextBlock>
         <TextBox Name="ReceiveDate" Margin="10" Background="Aquamarine" Style="{StaticResource TextBox}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="3"></TextBox>

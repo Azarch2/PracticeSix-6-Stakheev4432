@@ -14,7 +14,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource TextBig}" HorizontalAlignment="Center" Text="Добавление хранилища"></TextBlock>
+        <TextBlock Style="{StaticResource TextBig}" HorizontalAlignment="Center" Text="Добавление склада"></TextBlock>
         <TextBlock Style="{StaticResource TextStandart}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Text="Номер"></TextBlock>
         <TextBox Name="Number" Margin="10" Background="Aquamarine" Style="{StaticResource TextBox}" Width="200" Height="40" VerticalAlignment="Bottom" Grid.Row="1"></TextBox>
         <TextBlock  Style="{StaticResource TextStandart}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Text="Адрес"></TextBlock>
