@@ -106,6 +106,7 @@ namespace DetailsForMachines
             table.Range.ParagraphFormat.SpaceAfter = 0.0f;
             table.AutoFitBehavior(Word.WdAutoFitBehavior.wdAutoFitWindow);
             table.Range.Font.Name = "Comic Sans MS";
+            doc.SaveAs2(@"c:\documents\document.pdf", Word.WdSaveFormat.wdFormatPDF);
             app.Visible = true;
         }
         /// <summary>
